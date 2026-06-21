@@ -1,0 +1,2 @@
+### Containers not aligning? 
+- `ch` renders container width **depending on base font size.** Changing it to use `rem` instead of `ch` will match the container width in both navbar and body, since they're of different font size. 
