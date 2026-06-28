@@ -42,6 +42,11 @@ function rules.Str(el)
   if replacement then
     return pandoc.RawInline("html", replacement)
   end
+  -- ::co2:0.68mg:: -> co2 badge with extracted value
+  local val = el.text:match("^::co2:(.-)::$")
+  if val then
+      return pandoc.RawInline("html", '<a href="https://carbonneutralwebsite.org/" target="_blank" rel="noreferrer"><span class="co2">' .. val .. ' CO₂/load</span></a>')
+    end
   return el
 end
 

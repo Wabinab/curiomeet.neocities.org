@@ -298,7 +298,7 @@ textarea {
 }
 
 .msg {
-  padding: 1.5em;
+  padding: .5em;
   background: #def;
   border-left: 5px solid #59d
 }
@@ -317,4 +317,13 @@ textarea {
 
 ul {
   padding-left: 1.5em
+}
+
+.co2{
+  font:.9rem monospace;
+  color: #555;
+  border: 1px solid #ccc;
+  border-radius: 7px;
+  padding: 3px 5px;
+  display: inline-block
 }
