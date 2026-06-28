@@ -10,6 +10,7 @@ pandoc "$input" \
   -o "$outdir/index.html" \
   --standalone \
   --css=/styles.min.css \
+  --mathml \
   --syntax-highlighting=tango \
   --lua-filter=add-classes.lua
 

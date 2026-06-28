@@ -1,5 +1,4 @@
 -- add-classes.lua
--- Run with: pandoc input.md -o output.html --lua-filter=add-classes.lua --template=default.html5
 
 -- All the per-element rules live in this table, then get applied in
 -- one pass via doc:walk() inside the Pandoc() function at the bottom.
@@ -27,6 +26,22 @@ end
 -- tables -> your existing .table class
 function rules.Table(el)
   el.classes:insert("table")
+  return el
+end
+
+-- ::yes:: and ::no:: shortcodes -> consistently colored check/cross
+-- Add more shortcodes to this table as needed without touching the
+-- Str walker below.
+local icons = {
+  ["::yes::"] = '<span style="color:green">✔</span>',
+  ["::no::"]  = '<span style="color:red">✘</span>',
+}
+
+function rules.Str(el)
+  local replacement = icons[el.text]
+  if replacement then
+    return pandoc.RawInline("html", replacement)
+  end
   return el
 end
 

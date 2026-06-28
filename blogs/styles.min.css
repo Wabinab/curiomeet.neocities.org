@@ -262,6 +262,7 @@ textarea {
     margin-top: -11px
   }
 
+  .nav:hover,
   .nav:active,
   .nav:focus {
     height: auto
@@ -304,6 +305,10 @@ textarea {
 
 .text-center {
   text-align: center
+}
+
+.nmt {
+  margin-top: -1.2rem
 }
 
 .bottom-spacer {
